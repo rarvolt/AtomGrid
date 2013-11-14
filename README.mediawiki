@@ -2,9 +2,9 @@
 
 Program symulujący narastanie kryształków atomów.
 
-[https://github.com/rarvolt/AtomGrid/blob/master/Release/AtomGrid.exe Pobierz]
+[https://github.com/rarvolt/AtomGrid/raw/master/Release/AtomGrid.exe Pobierz]
 
-[https://github.com/rarvolt/AtomGrid/blob/master/AtomGrid-Launcher.exe Pobierz Launcher]
+[https://github.com/rarvolt/AtomGrid/raw/master/AtomGrid-Launcher.exe Pobierz Launcher]
 
 
 Do działania wymaga pakietu redystrybucyjnego [http://www.microsoft.com/en-us/download/details.aspx?id=40784 Microsoft Visual Studio C++ 2013].
