@@ -19,4 +19,7 @@
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\AtomGrid-Launcher.exe" />
+  </ItemGroup>
 </Project>
