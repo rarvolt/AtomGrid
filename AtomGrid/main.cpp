@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -58,21 +57,21 @@ int main(int argc, char* argv[]) {
 
 	grid_size = grid_width * grid_height;
 
-	// tworzenie siatki na podstawie podanych rozmiarów
+	// tworzenie siatki na podstawie podanych rozmiarï¿½w
 	uint *grid = new uint[grid_size];
 	for (uint i = 0; i < grid_size; ++i)
 		grid[i] = 0;
 
-	// je¿eli true program siê zakoñczy
+	// jeï¿½eli true program siï¿½ zakoï¿½czy
 	bool stop = false;
 
 	// true - w danym cyklu przeprowadzono losowanie
 	bool drawn = false;
 
-	// true - w danym cyklu zmodyfikowano wylosowane komórki
+	// true - w danym cyklu zmodyfikowano wylosowane komï¿½rki
 	bool changed = false;
 
-	// licznik przeprowadzonych losowañ
+	// licznik przeprowadzonych losowaï¿½
 	uint draws_counter = 0;
 
 	// aktualnie wylosowany numer
@@ -132,6 +131,9 @@ int main(int argc, char* argv[]) {
 		for (uint i = 0; i < draw_elements_count; ++i)
 			cout << numbers_drawn[i] << ", ";
 		cout << endl;
+		
+		char buf[2];
+		cin.getline(buf, 1);
 	}
 
 	cout << endl << endl;
