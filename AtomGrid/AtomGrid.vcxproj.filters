@@ -21,5 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\AtomGrid-Launcher.exe" />
+    <None Include="..\README.mediawiki" />
   </ItemGroup>
 </Project>

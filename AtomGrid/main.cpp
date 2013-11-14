@@ -107,8 +107,8 @@ int main(int argc, char* argv[]) {
 			if (!changed) {
 				changed = true;
 				for (uint i = 0; i < draw_elements_count; ++i) {
-					if (grid[numbers_drawn[i]] < 9)
-						++grid[numbers_drawn[i]];
+					if (!grid[numbers_drawn[i]])
+						grid[numbers_drawn[i]] = 1;
 				}
 			}
 			time_current = milliseconds_now();
@@ -124,7 +124,7 @@ int main(int argc, char* argv[]) {
 		cout << render_grid(grid);
 
 		cout.precision(4);
-		cout << "Wypelnienie: " << (float)getElementOnCount(grid, true) / ((float)grid_size * 9.0) * 100.0
+		cout << "Wypelnienie: " << (float)getElementOnCount(grid, true) / (float)grid_size * 100.0
 			<< '%' << endl;
 		cout << "Liczba losowan: " << draws_counter << endl;
 		cout << "Ostatnio wylosowane liczby:" << endl;
@@ -132,8 +132,7 @@ int main(int argc, char* argv[]) {
 			cout << numbers_drawn[i] << ", ";
 		cout << endl;
 		
-		char buf[2];
-		cin.getline(buf, 1);
+		while (GetAsyncKeyState(VK_RETURN) & 0x8000);
 	}
 
 	cout << endl << endl;
@@ -204,7 +203,7 @@ std::string render_grid(uint *grid) {
 	for (uint i = 0; i < grid_height; ++i) {
 		buf << " |";
 		for (uint j = 0; j < grid_width; ++j)
-			buf << grid[i*grid_width + j];
+			buf << (grid[i*grid_width + j] ? 'X' : ' ');
 		buf << "|" << std::endl;
 	}
 
