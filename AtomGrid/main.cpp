@@ -111,6 +111,12 @@ int main(int argc, char* argv[]) {
 						++grid[numbers_drawn[i]];
 				}
 			}
+
+			if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
+				stop = true;
+
+			while (GetAsyncKeyState(VK_RETURN) & 0x8000);
+
 			time_current = milliseconds_now();
 		}
 		if (getElementOnCount(grid) == grid_size)
@@ -119,7 +125,7 @@ int main(int argc, char* argv[]) {
 			drawn = changed = false;
 
 		clear_screen();
-		cout << "Aby zatrzymac nacisnij Ctrl+C." << endl;
+		cout << "Aby zatrzymac nacisnij ESC." << endl;
 
 		cout << render_grid(grid);
 
@@ -131,13 +137,13 @@ int main(int argc, char* argv[]) {
 		for (uint i = 0; i < draw_elements_count; ++i)
 			cout << numbers_drawn[i] << ", ";
 		cout << endl;
-		
-		char buf[2];
-		cin.getline(buf, 1);
 	}
+
+	
 
 	cout << endl << endl;
 	cout << "Symulacja zakonczona." << endl;
+	while (GetAsyncKeyState(VK_ESCAPE) & 0x8000);
 	system("pause");
 
 	return 0;
