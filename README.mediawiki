@@ -1,5 +1,4 @@
-AtomGrid
-========
+== AtomGrid ==
 
 Program symulujący narastanie kryształków atomów.
 
