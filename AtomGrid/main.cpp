@@ -111,6 +111,11 @@ int main(int argc, char* argv[]) {
 						grid[numbers_drawn[i]] = 1;
 				}
 			}
+
+			if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
+				stop = true;
+			while (GetAsyncKeyState(VK_RETURN) & 0x8000);
+
 			time_current = milliseconds_now();
 		}
 		if (getElementOnCount(grid) == grid_size)
@@ -132,11 +137,12 @@ int main(int argc, char* argv[]) {
 			cout << numbers_drawn[i] << ", ";
 		cout << endl;
 		
-		while (GetAsyncKeyState(VK_RETURN) & 0x8000);
+		
 	}
 
 	cout << endl << endl;
 	cout << "Symulacja zakonczona." << endl;
+	while (GetAsyncKeyState(VK_ESCAPE) & 0x8000);
 	system("pause");
 
 	return 0;
